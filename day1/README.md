@@ -34,3 +34,7 @@ A lightweight mode for basic monitoring at a lower cost.
 
 <img src="lab1.png">
 
+### Getting started with DQL 
+
+<img src="dql1.png">
+
