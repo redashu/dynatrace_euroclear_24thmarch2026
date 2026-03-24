@@ -1,8 +1,9 @@
-## Dynatrace Oneagent Monitoring Modes
+# Dynatrace Oneagent Monitoring Modes
 
-# Discovery Modes
+## Discovery Modes
 
-## Full-Stack Monitoring (Default)
+### Full-Stack Monitoring (Default)
+
 Offers the complete scope of Dynatrace capabilities.
 
 **Scope:** Infrastructure (CPU, RAM, disk, network) plus deep application-level monitoring.
@@ -11,7 +12,8 @@ Offers the complete scope of Dynatrace capabilities.
 
 **Best For:** Business-critical applications requiring full observability and dependency mapping.
 
-## Infrastructure Monitoring
+### Infrastructure Monitoring
+
 Focuses on host-level health without deep code-level insights.
 
 **Scope:** Host performance metrics, process analysis, and network metrics.
@@ -20,7 +22,8 @@ Focuses on host-level health without deep code-level insights.
 
 **Best For:** Supporting infrastructure like databases and message queues where code-level tracing is less critical.
 
-## Foundation & Discovery Mode
+### Foundation & Discovery Mode
+
 A lightweight mode for basic monitoring at a lower cost.
 
 **Scope:** Basic host health (CPU, memory, filesystem) and IT inventory.
@@ -29,12 +32,29 @@ A lightweight mode for basic monitoring at a lower cost.
 
 **Best For:** Low-priority hosts or large environments where only basic visibility and inventory management are needed.
 
+## Labs to be completed
 
-## Labs to be completed --
+### Getting started with DQL
 
-<img src="lab1.png">
+![DQL Dashboard](dql1.png)
 
-### Getting started with DQL 
+### Monitoring app server with UI apps
 
-<img src="dql1.png">
+![UI Application](ui1.png)
+
+### Setup & deploy sample UI app in Linux machine
+
+```bash
+yum install httpd -y
+yum install git -y
+# Cloning app source code
+git clone https://github.com/schoolofdevops/html-sample-app.git
+
+# Copy all the webapp data to /var/www/html/
+cp -rf html-sample-app/* /var/www/html/
+
+# Start httpd app
+systemctl start httpd
+systemctl status httpd
+```
 
