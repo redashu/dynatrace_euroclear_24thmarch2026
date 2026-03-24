@@ -46,3 +46,12 @@ THIRDPARTYLICENSEREADME.txt  authorizedkeys                         conf  dt_fip
 
 ```
 
+### more systemctl options 
+
+```
+18  systemctl stop  oneagent
+   19  systemctl status  oneagent
+   20  systemctl start  oneagent
+   21  systemctl status  oneagent
+```
+

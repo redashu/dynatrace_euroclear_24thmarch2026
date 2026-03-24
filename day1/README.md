@@ -28,3 +28,9 @@ A lightweight mode for basic monitoring at a lower cost.
 **Features:** Provides topology discovery and host criticality. It does not include process analysis or deep metrics but can still integrate log management.
 
 **Best For:** Low-priority hosts or large environments where only basic visibility and inventory management are needed.
+
+
+## Labs to be completed --
+
+<img src="lab1.png">
+
