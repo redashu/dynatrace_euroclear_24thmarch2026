@@ -67,7 +67,6 @@ remote: Total 581 (delta 181), reused 460 (delta 104), pack-reused 0 (from 0)
 Receiving objects: 100% (581/581), 6.66 MiB | 30.43 MiB/s, done.
 Resolving deltas: 100% (181/181), done.
 
-
 [root@ip-172-31-36-243 ~]# yum install python3-pip
 Last metadata expiration check: 21:24:38 ago on Tue Mar 24 14:13:35 2026.
 Dependencies resolved.
@@ -80,7 +79,6 @@ Installing weak dependencies:
  libxcrypt-compat                    x86_64                    4.4.33-7.amzn2023                          amazonlinux                     92 k
 
 Transaction Summary
-
 
 [root@ip-172-31-36-243 ~]# ls
 Dynatrace-ActiveGate-Linux-x86-1.333.37.20260312-151000.sh  dt-root.cert.pem    html-sample-app
@@ -100,7 +98,6 @@ Collecting flask
 Collecting openai==1.59.8
    Downloading openai-1.59.8-py3-none-any.whl (455 kB)
 
-
 [root@ip-172-31-36-243 Flask_chatUI]# python3 app.py
  * Serving Flask app 'app'
  * Debug mode: on
@@ -113,7 +110,58 @@ Press CTRL+C to quit
  * Debugger is active!
 ```
 
-### Note user your public IP of ec2 machine 
-http://yourip:5015
+### Note user your public IP of ec2 machine
 
-default user and password is admin/admin
+`http://yourip:5015`
+
+Default user and password: `admin/admin`
+
+### Time to Monitor a Database (mysqlDB)
+
+### Installing MySQL client on the machine where oneagent is there
+
+```bash
+yum install mariadb105
+Last metadata expiration check: 23:14:53 ago on Tue Mar 24 14:13:35 2026.
+Dependencies resolved.
+===============================================================================================================================================
+ Package                                    Architecture           Version                                   Repository                   Size
+===============================================================================================================================================
+Installing:
+ mariadb105                                 x86_64                 3:10.5.29-1.amzn2023.0.1
+```
+
+### Connecting from oneagent machine
+
+```bash
+mysql -h database-1.c3cuw4kq6kkc.us-east-1.rds.amazonaws.com -P 3306 -u admin -p
+# Password: Redhat12345
+```
+
+## Deploying flask webapp with mysql db
+
+```bash
+ls
+Dynatrace-ActiveGate-Linux-x86-1.333.37.20260312-151000.sh  dt-root.cert.pem    html-sample-app
+Dynatrace-OneAgent-Linux-x86-1.333.55.20260317-092136.sh    dt-root.cert.pem.1  resources
+cd resources/
+ls
+Flask_chatUI  ansible-playbooks  compose-files  github-actions  ocp_manifests  terraform-tf
+cd webappss/
+ls
+dotnet-core  flask-training-management  flaskapp  node-app  python-flask-weathermap  reactjs
+cd flask-training-management/
+ls
+README.md  app.py  requirements.txt  static  templates
+
+# Change app.py with database details
+nano app.py
+
+# Install dependencies
+sudo yum install -y gcc python3-devel pkgconfig mariadb105-devel
+pip3 install -r requirements.txt
+
+# Run the app
+python3 app.py
+# Username: testuser | Password: testpassword
+```
