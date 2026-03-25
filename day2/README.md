@@ -114,6 +114,6 @@ Press CTRL+C to quit
 ```
 
 ### Note user your public IP of ec2 machine 
-http://yourip:5051
+http://yourip:5015
 
 default user and password is admin/admin
