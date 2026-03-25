@@ -10,3 +10,7 @@ https://myaccount.dynatrace.com/
 ```
 https://university.dynatrace.com/
 ```
+
+### Grail data storage system 
+
+[click_here](https://docs.dynatrace.com/docs/platform/grail/organize-data)
