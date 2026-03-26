@@ -45,3 +45,22 @@ autoupdater  gateway  oneagent  supportarchive
 ### AI model types 
 
 <img src="aic1.png">
+
+### Installing Docker 
+
+```
+yum install docker -y
+
+systemctl enable --now docker 
+
+===> deploying webapp as container 
+
+
+docker run -itd --name ashuc1 -p 1234:80 nginx
+
+docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                   NAMES
+df4f2720b16b   nginx     "/docker-entrypoint.…"   7 minutes ago   Up 7 minutes   0.0.0.0:1234->80/tcp, :::1234->80/tcp   ashuc1
+
+```
+
