@@ -64,3 +64,10 @@ df4f2720b16b   nginx     "/docker-entrypoint.…"   7 minutes ago   Up 7 minutes
 
 ```
 
+### Digital experience options 
+
+<img src="dig1.png">
+
+### Info about RUM 
+
+[click_here](RUM.md)
